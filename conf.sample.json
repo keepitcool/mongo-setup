@@ -1,0 +1,15 @@
+{
+  "host": "localhost",
+  "port": 27017,
+  "dbname": "test",
+  "collections": [
+    {
+      "name": "sample",
+      "sharding_key": {"id": 1},
+      "indexes": [
+        {"id":1, "date": 1},
+        {"type": 1}
+      ]
+    }
+  ]
+}
