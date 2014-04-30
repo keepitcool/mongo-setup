@@ -55,6 +55,7 @@ exports.run = function (conf, verbose) {
       var collection = item.name;
       var indexes = item.indexes;
       var shardingKey = item.sharding_key;
+      if (_.find(indexes, shardingKey) === undefined) indexes.push(shardingKey);
 
       queue.push(function (done) {
         indexer.setupCollection(collection, indexes, done);

@@ -1,6 +1,6 @@
 {
   "name": "mongo-setup",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "bin": {
     "mongo-setup": "./batch.js"
   },
