@@ -1,12 +1,12 @@
 {
   "name": "mongo-setup",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "bin": {
     "mongo-setup": "./batch.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/etissieres/setup-mongo.git"
+    "url": "https://github.com/keepitcool/mongo-setup.git"
   },
   "dependencies": {
     "mongodb": "1.3.*",

@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
 var commander = require('commander');
-var version = require(__dirname + '/package').version;
-var utils = require(__dirname + '/lib/utils');
-var logger = require(__dirname + '/lib/logger');
-var main = require(__dirname + '/index');
+var version = require('./package').version;
+var logger = require('./lib/logger');
+var main = require('./index');
 
 commander
   .version(version)
@@ -14,9 +13,9 @@ commander
 
 var conf;
 try {
-  conf = require(utils.securePath(commander.conf));
+  conf = require(process.cwd() + '/' + commander.conf);
 } catch (err) {
-  logger.error('Error loading configuration at ' + commander.conf + ' !');
+  logger.error('Error loading configuration at ' + commander.conf + ' !', err);
   process.exit(1);
 }
 
