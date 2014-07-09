@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+var path = require('path');
 var commander = require('commander');
 var version = require('./package').version;
 var logger = require('./lib/logger');
@@ -13,7 +14,7 @@ commander
 
 var conf;
 try {
-  conf = require(process.cwd() + '/' + commander.conf);
+  conf = require(path.resolve(process.cwd(), commander.conf));
 } catch (err) {
   logger.error('Error loading configuration at ' + commander.conf + ' !', err);
   process.exit(1);
