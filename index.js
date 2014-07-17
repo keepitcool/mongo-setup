@@ -18,10 +18,6 @@ exports.run = function (conf, verbose) {
 
   logger.info('Loading configuration...');
   logger.verbose = verbose || false;
-  conf = _.assign({
-    host: 'localhost',
-    port: mongo.DEFAULT_PORT
-  }, conf);
   logger.info('Configuration loaded !');
   logger.debug('Using configuration', JSON.stringify(conf, null, 2));
 
@@ -34,7 +30,7 @@ exports.run = function (conf, verbose) {
 
   /* Processing */
 
-  mongo.connect(conf.host, conf.port, function (client) {
+  mongo.connect(conf.mongoUrl, function (client) {
     indexer.configure(client, conf.dbname);
     sharder.configure(client, conf.dbname);
 

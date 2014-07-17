@@ -1,6 +1,5 @@
 {
-  "host": "localhost",
-  "port": 27017,
+  "mongoUrl": "mongodb://localhost:27017",
   "dbname": "test",
   "collections": [
     {
